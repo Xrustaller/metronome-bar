@@ -30,7 +30,7 @@ function onLoad()
     randomize();
 
     for(var i = 0; i < points.length; i++) {
-        if(points[i].originX != unitWidth*(numPointsX-1) && points[i].originY != unitHeight*(numPointsY-1)) {
+        if(points[i].originX !== unitWidth*(numPointsX-1) && points[i].originY !== unitHeight*(numPointsY-1)) {
             var topLeftX = points[i].x;
             var topLeftY = points[i].y;
             var topRightX = points[i+1].x;
@@ -45,32 +45,32 @@ function onLoad()
             for(var n = 0; n < 2; n++) {
                 var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
 
-                if(rando==0) {
-                    if(n==0) {
+                if(rando === 0) {
+                    if(n === 0) {
                         polygon.point1 = i;
                         polygon.point2 = i+numPointsX;
                         polygon.point3 = i+numPointsX+1;
                         polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+bottomRightX+','+bottomRightY);
-                    } else if(n==1) {
+                    } else if(n === 1) {
                         polygon.point1 = i;
                         polygon.point2 = i+1;
                         polygon.point3 = i+numPointsX+1;
                         polygon.setAttribute('points',topLeftX+','+topLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
                     }
-                } else if(rando==1) {
-                    if(n==0) {
+                } else if(rando === 1) {
+                    if(n === 0) {
                         polygon.point1 = i;
                         polygon.point2 = i+numPointsX;
                         polygon.point3 = i+1;
                         polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY);
-                    } else if(n==1) {
+                    } else if(n === 1) {
                         polygon.point1 = i+numPointsX;
                         polygon.point2 = i+1;
                         polygon.point3 = i+numPointsX+1;
                         polygon.setAttribute('points',bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
                     }
                 }
-                polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/4)+')');
+                polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/1.5)+')');
                 var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
                 animate.setAttribute('fill','freeze');
                 animate.setAttribute('attributeName','points');
