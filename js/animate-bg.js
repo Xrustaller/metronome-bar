@@ -1,4 +1,4 @@
-var refreshDuration = 10000;
+var refreshDuration = 15000;
 var refreshTimeout;
 var numPointsX;
 var numPointsY;
@@ -10,7 +10,7 @@ function onLoad()
 {
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('width',window.innerWidth);
-    svg.setAttribute('height',window.innerHeight - 4);
+    svg.setAttribute('height',window.innerHeight - 3);
     document.querySelector('#bg').appendChild(svg);
 
     var unitSize = (window.innerWidth+window.innerHeight)/20;
@@ -40,7 +40,7 @@ function onLoad()
             var bottomRightX = points[i+numPointsX+1].x;
             var bottomRightY = points[i+numPointsX+1].y;
 
-            var rando = Math.floor(Math.random()*2);
+            var rando = Math.floor(Math.random()*4);
 
             for(var n = 0; n < 2; n++) {
                 var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
@@ -70,7 +70,7 @@ function onLoad()
                         polygon.setAttribute('points',bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
                     }
                 }
-                polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/3)+')');
+                polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/4)+')');
                 var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
                 animate.setAttribute('fill','freeze');
                 animate.setAttribute('attributeName','points');
@@ -105,7 +105,9 @@ function refresh() {
         if(animate.getAttribute('to')) {
             animate.setAttribute('from',animate.getAttribute('to'));
         }
-        animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
+        if (polygon.point1 !== undefined && polygon.point2 !== undefined && polygon.point3 !== undefined){
+            animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
+        }
         animate.beginElement();
     }
     refreshTimeout = setTimeout(function() {refresh();}, refreshDuration);
