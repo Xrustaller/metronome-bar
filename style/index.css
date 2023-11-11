@@ -68,6 +68,14 @@ body {
     transform: translate(0, -50%);
 }
 
+.menu-lt {
+    margin-left: 20px;
+}
+
+.menu-lt div {
+    margin: 20px 0;
+}
+
 .center-header {
     font-size: 42pt;
     color: #FFF;
@@ -93,13 +101,88 @@ a {
     box-shadow: 0 0 7px #4f4f4f; /* Параметры тени */
 }
 
-.imgButton {
+
+.imgButton a img {
+    width: 96px;
+    height: 96px;
     border-radius: 100%; /* Радиус скругления */
     border: 3px solid #000000; /* Параметры рамки */
-    background-color: #FFF;
 }
 
-.imgButton:hover {
+.imgButton:hover a img {
     border: 3px solid #ff012a; /* Параметры рамки */
-    background-color: #DDD;
+    box-shadow: 0 0 20px #000; /* Параметры тени */
 }
+
+.imgButton:active a img {
+    border: 3px solid #ff012a; /* Параметры рамки */
+    box-shadow: 0 0 20px #000; /* Параметры тени */
+}
+
+.imgButtonCentral a img {
+    border-radius: 100%; /* Радиус скругления */
+    background-color: #ff012a;
+    box-shadow: 0 0 20px #000; /* Параметры тени */
+}
+.imgButtonCentral:hover a img {
+    border: 3px solid #ff012a; /* Параметры рамки */
+    background-color: #dedede;
+    box-shadow: 0 0 20px #000; /* Параметры тени */
+}
+
+.imgButtonCentral:active a img {
+    border: 3px solid #86001c; /* Параметры рамки */
+    background-color: #a1a1a1;
+}
+
+.imgCentral {
+    width: 600px;
+    height: 600px;
+}
+
+@media (max-width: 1100px) {
+    .imgButton a img {
+        width: 64px;
+        height: 64px;
+    }
+    .imgCentral {
+        width: 500px;
+        height: 500px;
+    }
+    .imgButtonCentral a img {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+@media (max-width: 992px) {
+    .imgButton a img {
+        width: 64px;
+        height: 64px;
+    }
+    .imgCentral {
+        width: 300px;
+        height: 300px;
+    }
+    .imgButtonCentral a img {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 600px) {
+    .imgButton a img {
+        width: 48px;
+        height: 48px;
+    }
+    .imgCentral {
+        width: 200px;
+        height: 200px;
+    }
+    .imgButtonCentral a img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
