@@ -15,6 +15,30 @@ body {
     background: linear-gradient(180deg, #ff012a 0%, #000000 100%) repeat;
 }
 
+div.click-to-top span {
+    display: none;
+    position: absolute;
+    background: #333;
+    color: #fff;
+}
+
+div.click-to-top:hover span {
+    display: block;
+
+    color: #FFF;
+    background-color: #000;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 0 7px #4f4f4f; /* Параметры тени */
+    padding: 10px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: -50%;
+}
+
 .al-top {
     position: absolute;
     text-align: center;
@@ -68,11 +92,36 @@ body {
     transform: translate(0, -50%);
 }
 
+.menu-top {
+    margin-top: 100px;
+}
+
+.menu-top div img {
+    width: 128px;
+    height: 128px;
+    padding: 10px;
+    border-radius: 100%; /* Радиус скругления */
+    background-color: #FFF;
+    box-shadow: 0 0 40px #000; /* Параметры тени */
+}
+
+.menu-top:hover div img {
+    background-color: #CCC;
+}
+
 .menu-lt {
     margin-left: 20px;
 }
 
 .menu-lt div {
+    margin: 20px 0;
+}
+
+.menu-rt {
+    margin-right: 20px;
+}
+
+.menu-rt div {
     margin: 20px 0;
 }
 
@@ -140,7 +189,14 @@ a {
     height: 600px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1100px) or (max-height: 1100px) {
+    .menu-top {
+        margin-top: 80px;
+    }
+    .menu-top div img {
+        width: 112px;
+        height: 112px;
+    }
     .imgButton a img {
         width: 64px;
         height: 64px;
@@ -155,7 +211,7 @@ a {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) or (max-height: 992px) {
     .imgButton a img {
         width: 64px;
         height: 64px;
@@ -170,7 +226,14 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) or (max-height: 600px) {
+    .menu-top {
+        margin-top: 60px;
+    }
+    .menu-top div img {
+        width: 96px;
+        height: 96px;
+    }
     .imgButton a img {
         width: 48px;
         height: 48px;
@@ -184,5 +247,7 @@ a {
         height: 48px;
     }
 }
+
+
 
 
