@@ -36,7 +36,6 @@ div.click-to-top:hover span {
     position: absolute;
     z-index: 1;
     top: 80%;
-    left: -50%;
 }
 
 .al-top {
