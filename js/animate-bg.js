@@ -10,7 +10,7 @@ function onLoad()
 {
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('width',window.innerWidth);
-    svg.setAttribute('height',window.innerHeight - 3);
+    svg.setAttribute('height',window.innerHeight - 4);
     document.querySelector('#bg').appendChild(svg);
 
     var unitSize = (window.innerWidth+window.innerHeight)/20;
