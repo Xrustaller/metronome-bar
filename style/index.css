@@ -24,7 +24,6 @@ div.click-to-top span {
 
 div.click-to-top:hover span {
     display: block;
-
     color: #FFF;
     background-color: #000;
     text-align: center;
@@ -184,8 +183,29 @@ a {
 }
 
 .imgCentral {
+    width: 560px;
+    height: 560px;
+}
+
+.imgCentralNote {
     width: 600px;
     height: 600px;
+}
+
+.imgCentralSquare {
+    width: 560px;
+    height: 560px;
+    animation: 8s linear infinite rotate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 1100px) or (max-height: 1100px) {
@@ -201,8 +221,19 @@ a {
         height: 64px;
     }
     .imgCentral {
+        width: 460px;
+        height: 460px;
+    }
+
+    .imgCentralNote {
         width: 500px;
         height: 500px;
+    }
+
+    .imgCentralSquare {
+        width: 460px;
+        height: 460px;
+        animation: 8s linear infinite rotate;
     }
     .imgButtonCentral a img {
         width: 96px;
@@ -219,6 +250,18 @@ a {
         width: 300px;
         height: 300px;
     }
+
+    .imgCentralNote {
+        width: 300px;
+        height: 300px;
+    }
+
+    .imgCentralSquare {
+        width: 280px;
+        height: 280px;
+        animation: 8s linear infinite rotate;
+    }
+
     .imgButtonCentral a img {
         width: 64px;
         height: 64px;
@@ -240,6 +283,15 @@ a {
     .imgCentral {
         width: 200px;
         height: 200px;
+    }
+    .imgCentralNote {
+        width: 200px;
+        height: 200px;
+    }
+    .imgCentralSquare {
+        width: 180px;
+        height: 180px;
+        animation: 8s linear infinite rotate;
     }
     .imgButtonCentral a img {
         width: 48px;

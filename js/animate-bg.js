@@ -6,8 +6,7 @@ var unitWidth;
 var unitHeight;
 var points;
 
-function onLoad()
-{
+function backGroundStart() {
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('width',window.innerWidth);
     svg.setAttribute('height',window.innerHeight - 4);
@@ -83,9 +82,7 @@ function onLoad()
     }
 
     refresh();
-
 }
-
 function randomize() {
     for(var i = 0; i < points.length; i++) {
         if(points[i].originX != 0 && points[i].originX != unitWidth*(numPointsX-1)) {
@@ -96,7 +93,6 @@ function randomize() {
         }
     }
 }
-
 function refresh() {
     randomize();
     for(var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
@@ -113,10 +109,15 @@ function refresh() {
     refreshTimeout = setTimeout(function() {refresh();}, refreshDuration);
 }
 
+function onLoad()
+{
+    backGroundStart()
+    document.querySelector('#logo')
+}
 function onResize() {
     document.querySelector('#bg svg').remove();
     clearTimeout(refreshTimeout);
-    onLoad();
+    backGroundStart();
 }
 
 window.onload = onLoad;
