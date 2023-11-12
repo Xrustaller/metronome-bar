@@ -190,12 +190,43 @@ a {
 .imgCentralNote {
     width: 600px;
     height: 600px;
+    animation: 2s linear infinite upDownMove;
 }
 
 .imgCentralSquare {
     width: 560px;
     height: 560px;
     animation: 8s linear infinite rotate;
+}
+
+@keyframes upDownMove {
+    from {
+        margin-top: 0;
+    }
+
+    10% {
+        margin-bottom: 3%;
+    }
+
+    25% {
+        margin-bottom: 8%;
+    }
+
+    50% {
+        margin-bottom: 15%;
+    }
+
+    75% {
+        margin-bottom: 8%;
+    }
+
+    90% {
+        margin-bottom: 3%;
+    }
+
+    to {
+        margin-top: 0;
+    }
 }
 
 @keyframes rotate {
