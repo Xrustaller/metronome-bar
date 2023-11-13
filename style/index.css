@@ -108,6 +108,10 @@ div.click-to-top:hover span {
 }
 
 .menu-lt {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
     margin-left: 20px;
 }
 
@@ -117,6 +121,10 @@ div.click-to-top:hover span {
 
 .menu-rt {
     margin-right: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
 }
 
 .menu-rt div {
@@ -206,7 +214,7 @@ a {
 
 @keyframes upDownMove {
     from {
-        margin-top: 0;
+        margin-bottom: 0;
     }
 
     10% {
@@ -230,7 +238,7 @@ a {
     }
 
     to {
-        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
