@@ -12,7 +12,11 @@ body {
     font-size: 12pt;
     color: #FFFFFF;
     font-family: "Open Sans", sans-serif;
-    background: linear-gradient(180deg, #ff012a 0%, #000000 100%) repeat;
+    background: linear-gradient(0deg, #000000 0%, #ff012a 100%) repeat;
+}
+
+#bg {
+    filter: blur(6px);
 }
 
 div.click-to-top span {
